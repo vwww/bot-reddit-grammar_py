@@ -1,0 +1,4 @@
+cron:
+- description: correct users!
+  url: /do/post
+  schedule: every 1 minutes synchronized
