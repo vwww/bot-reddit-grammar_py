@@ -4,6 +4,7 @@ from .http import getNew
 from .auth import authorize
 from .wording import MakeWording
 
+from .config_exclude import excluded_subreddits
 import storage
 
 import json
@@ -43,6 +44,11 @@ def do(simulate=False):
     # Process new links
     for link in links:
         l = link['data']
+        # Check against subreddit blacklist
+        if l['subreddit'] in excluded_subreddits:
+            skipped.append(l['title'])
+            continue
+        # Try to correct the user
         corrected = MakeWording(l['title'], l['selftext'], l['author'])
         if corrected:
             if simulate:
