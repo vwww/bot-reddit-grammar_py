@@ -9,8 +9,8 @@ import urllib
 from google.appengine.api import urlfetch
 
 
-def getNew(last=''):
-    url = 'http://www.reddit.com/r/all/new.json?limit=100'
+def getNew(last='', subreddit='all'):
+    url = 'http://www.reddit.com/r/%s/new.json?limit=100' % (subreddit)
     if last:
         url += '&before=' + last
     url = '%s&%f' % (url, random.random())

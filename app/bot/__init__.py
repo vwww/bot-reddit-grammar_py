@@ -4,7 +4,7 @@ from .http import getNew
 from .auth import authorize
 from .wording import MakeWording
 
-from .config_exclude import excluded_subreddits
+from .config import subreddit
 import storage
 
 import json
@@ -25,7 +25,7 @@ def do(simulate=False):
     # Get previous offest
     count = storage.getCounter()
     # Fetch new links
-    resp = getNew(count.last)
+    resp = getNew(count.last, subreddit)
 
     # Check if there are links
     links = json.loads(resp.content)['data']['children']
@@ -44,8 +44,8 @@ def do(simulate=False):
     # Process new links
     for link in links:
         l = link['data']
-        # Check against subreddit blacklist
-        if l['subreddit'] in excluded_subreddits:
+        # Ensure correct subreddit
+        if l['subreddit'] != subreddit:
             skipped.append(l['title'])
             continue
         # Try to correct the user
