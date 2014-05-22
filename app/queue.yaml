@@ -1,4 +1,5 @@
 queue:
 - name: default
-  rate: 0.6/m
+# 6/h is guaranteed
+  rate: 1/m
   bucket_size: 1
