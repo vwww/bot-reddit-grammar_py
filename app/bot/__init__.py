@@ -55,7 +55,7 @@ def do(simulate=False):
                 logging.info(corrected)
             else:
                 logging.warning('Deferred %s' % (corrected))
-                taskqueue.add(url='/do/post', params={
+                taskqueue.add(url='/do/comment', params={
                     'parent': l['name'],
                     'text': corrected,
                 })

@@ -22,7 +22,7 @@ class ExecHandler(webapp2.RequestHandler):
             self.response.out.write('unknown action')
 
     def post(self, action):
-        if action == 'post':
+        if action == 'comment':
             bot.comment(self.request.get('parent'), self.request.get('text'))
 
 class WarmupHandler(webapp2.RequestHandler):
