@@ -68,14 +68,14 @@ def MakeWording(title, text, author):
         return CORRECTION_TEXT % (author, original, corrected)
     return False
 
-CORRECTION_TITLE = """/u/%s, the Reddit Grammar Police Bot has detected an error in the title of your link:
+CORRECTION_TITLE = """/u/%s, the Reddit Grammar Bot has detected an error in the title of your link:
 
 > %s
 
 As indicated above, we recommend that you use %s instead.
 """
 
-CORRECTION_TITLE_TEXT = """/u/%s, the Reddit Grammar Police Bot has detected an error in the title of your link:
+CORRECTION_TITLE_TEXT = """/u/%s, the Reddit Grammar Bot has detected an error in the title of your link:
 
 > %s
 
@@ -86,7 +86,7 @@ Additionally, we detected an error in the description of your link:
 As indicated above, we recommend that you use %s in the title, and for the description, we recommend %s instead.
 """
 
-CORRECTION_TEXT = """/u/%s, the Reddit Grammar Police Bot has detected an error in the description of your link:
+CORRECTION_TEXT = """/u/%s, the Reddit Grammar Bot has detected an error in the description of your link:
 
 %s
 
