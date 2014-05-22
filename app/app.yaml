@@ -11,7 +11,7 @@ automatic_scaling:
 handlers:
 # Backend
 # Bot events
-- url: /do/(post|simulate|session)
+- url: /do/\w+
   script: main.app
   login: admin
 
