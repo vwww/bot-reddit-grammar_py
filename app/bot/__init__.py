@@ -17,9 +17,11 @@ session = ''
 
 
 def startup():
-    global uh, session
-    uh, session = authorize()
+    authorized(authorize())
 
+def authorized(data):
+    global uh, session
+    uh, session = data
 
 def do(simulate=False):
     # Get previous offest

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+"""An alternative method is to get the token with this and set it with the web form."""
 
 import getpass
 import urllib
