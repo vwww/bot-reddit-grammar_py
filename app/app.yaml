@@ -4,8 +4,8 @@ runtime: python27
 api_version: 1
 threadsafe: true
 automatic_scaling:
-  min_idle_instances: 1
-  max_idle_instances: 1
+  min_idle_instances: 1 # resident instance
+  max_idle_instances: 1 # cap
   min_pending_latency: 10ms
 
 handlers:
@@ -14,11 +14,13 @@ handlers:
 - url: /do/\w+
   script: main.app
   login: admin
+  secure: always
 
 # Warmup
 - url: /_ah/warmup
   script: main.app
   login: admin
+  secure: always
 
 inbound_services:
 - warmup
