@@ -10,7 +10,7 @@ from google.appengine.api import urlfetch
 
 
 def getNew(last='', subreddit='all'):
-    url = 'http://www.reddit.com/r/%s/new.json?limit=100' % (subreddit)
+    url = 'https://www.reddit.com/r/%s/new.json?limit=100' % (subreddit)
     if last:
         url += '&before=' + last
     url = '%s&%f' % (url, random.random())
@@ -38,7 +38,7 @@ def postComment(parent, text, modhash, session):
         'uh': modhash,
     })
     logging.debug(payload)
-    return urlfetch.fetch('http://www.reddit.com/api/comment',
+    return urlfetch.fetch('https://www.reddit.com/api/comment',
                           payload=payload,
                           method=urlfetch.POST,
                           headers={
