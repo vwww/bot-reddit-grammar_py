@@ -24,7 +24,7 @@ def authorized(data):
     uh, session = data
 
 def do(simulate=False):
-    # Get previous offest
+    # Get previous offset
     count = storage.getCounter()
     # Fetch new links
     resp = getNew(count.last, subreddit)
